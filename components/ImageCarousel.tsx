@@ -1,14 +1,25 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ImageCarousel = ({ images }: any) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [autoScroll, setAutoScroll] = useState(true);
+
+  useEffect(() => {
+    if(autoScroll) {
+      setTimeout(() => {
+        setCurrentIndex(currentIndex + 1)
+      }, 1500)
+    }
+  })
 
   const handlePrev = () => {
+    setAutoScroll(false)
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
   };
 
   const handleNext = () => {
+    setAutoScroll(false)
     setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
   };
 

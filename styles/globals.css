@@ -7,12 +7,16 @@ h1 {
   width: full
 }
 
+h3 {
+  margin-top: 50px
+}
+
 .container {
   max-width: 1100px;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
-  padding: 50px
+  padding: 30px
 }
 
 .autocomplete-container {
@@ -49,17 +53,39 @@ h1 {
 }
 
 .photo-gallery-container {
+  background-color: #333333;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.photo-gallery-thumb-image {
+  padding: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.photo-gallery-image-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  overflow-x: scroll;
+  padding-bottom: 10px
+}
+
+.selected-photo {
+  border: 2px solid #ffffff;
 }
 
 .photo-gallery-image {
-  width: 200px;
+  width: 100px;
   margin: 8px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .photo-gallery-image:hover {
